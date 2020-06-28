@@ -32,7 +32,7 @@ class Search extends React.Component {
             cancelToken: this.cancel.token
         } )
             .then( res => {
-                console.log(res.data.items[0])
+                // console.log(res.data.items[0])
 
                 const resultNotFoundMsg = ! res.data
                     ? 'There are no more search results, please try a new channel'
@@ -43,7 +43,7 @@ class Search extends React.Component {
                     loading: false
                 })
 
-                console.log(this.state)
+                // console.log(this.state)
                 
             })
             .catch( error => {
