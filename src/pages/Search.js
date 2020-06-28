@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios'
 import config from '../YouTube/config';
 import CountUp from 'react-countup'
-
+import Loader from '../images/loader.gif'
 class Search extends React.Component {
 
     constructor( props ) {
@@ -56,7 +56,7 @@ class Search extends React.Component {
             }) 
     }
     renderSearchResults = () => {
-        const { results } = this.state;
+        const { results, loading, message } = this.state;
     
         if ( results ) {
             return (
@@ -130,16 +130,27 @@ class Search extends React.Component {
 
     handleOnInputChange = ( event ) => {
         const query = event.target.value;
-        this.setState({query: query, loading: true, message: ''}, () => {
+        /* this.setState({query: query, loading: true, message: ''}, () => {
             this.fetchSearchResults( query);
-        })
+        }) */
+        if ( !query) {
+            this.setState( {
+                query,
+                results: {},
+                message: ''
+            })
+        } else {
+            this.setState({query: query, loading: true, message: ''}, () => {
+                this.fetchSearchResults( query);
+            })
+        }
         
     }
 
     
     render() {
 
-        const { query } = this.state;
+        const { query, loading, message } = this.state;
         return (
             <div>
                 <div className="container">
@@ -155,6 +166,10 @@ class Search extends React.Component {
                             placeholder="ex: UC-8QAzbLcRglXeN_MY9blyw"
                         />
                     </form>
+                </div>
+                {message && <p className="message text-center">{message}</p>}
+                <div className="text-center">
+                    <img src={Loader} className={`search-loading ${ loading ? 'show' : 'hide'}`} alt="loader" />
                 </div>
                 {this.renderSearchResults()}
             </div>
