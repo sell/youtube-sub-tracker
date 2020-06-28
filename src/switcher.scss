@@ -1,0 +1,232 @@
+$bg-theme-light: #eef5f9;
+$color-theme-light: #000;
+
+$bg-theme-dark: #222;
+$color-theme-dark: #fff;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    min-height: 100vh;
+}
+
+.App {
+    background-color: $bg-theme-light;
+    color: $color-theme-light;
+    .home-body-text {
+        button {
+            border: 1px solid black;
+            background-color: $bg-theme-light;
+        }
+
+        button, a {
+            transition: all 0.4s ease-in-out 0s;
+        }
+
+        button:hover {
+            background-color: black;
+            a {
+                color: white;
+            }
+        }
+    }
+    code {
+        color: #fb644c
+    }
+
+}
+
+.content-box {
+    margin: 0 auto;
+    background-color: #ccc;
+    color: $color-theme-light;
+    border-radius: 8px;
+    padding: 30px 30px 40px 30px;
+    max-width: 800px;
+    h3 {
+        line-height: 1.2;
+        margin: 0;
+        font-size: 26px;
+    }
+    h5 {
+        line-height: 1.5;
+        margin: 0 0 20px 0;
+        font-size: 22px;
+    }
+}
+
+.theme-switcher-wrap {
+    line-height: 10px;
+    .theme-switcher-label {
+        display: inline-block;
+        cursor: pointer;
+        .switch-path {
+            width: 40px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: #ccc;
+            transition: all 0.3s ease-in-out;
+            .switch-handle {
+                background-color: #999;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+        &.active {
+            .switch-path {
+                background-color: #555;
+            }
+            .switch-handle {
+                transform: translateX(20px);
+                background-color: #fb644c;
+            }
+        }
+    }
+}
+
+.App.theme-dark {
+    background-color: $bg-theme-dark;
+    color: $color-theme-dark;
+    .content-box {
+        background-color: #333;
+        h3,
+        h5 {
+            color: #fb644c;
+        }
+        p {
+            color: #ccc;
+        }
+        li {
+            color: #ccc;
+        }
+        .ulHeading:before{
+            color: #ccc;
+        } 
+    }
+    .ErrorPageMainBody {
+        color: $color-theme-light;
+    }
+    .home-body-text {
+
+        button {
+            a {
+                color: $color-theme-dark;
+                text-decoration: none;
+            }
+                background-color: #333;
+                color: $color-theme-dark;
+                border: 1px solid $color-theme-dark;
+                transition: all 0.3s ease-in-out 0s;
+        }
+    }
+    button:hover {
+        a {
+            animation: 1s ease-in-out;
+            color: #fb644c;
+            cursor: pointer;
+        }
+    }
+
+    code {
+        color: #fb644c
+    }
+
+    .sub-count-page {
+        color: $color-theme-light;
+    }
+}
+
+.ulHeading:before{
+    content:attr(data-header);
+    font-size:120%;
+    font-weight:bold;
+    margin-left:-15px;
+}  
+
+.logo-image-body {
+    border-radius: 50%;
+    width: 200px;
+    transition: all 0.3s ease-in-out 0s;
+
+}
+
+.logo-image-body:hover {
+    transform: rotate(360deg);
+}
+
+.home-body {
+    
+    margin-top: 18vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-body-text {
+    text-align: center;
+    button {
+        border-radius: 10px;
+        margin-left: 5px;
+
+        a {
+            text-decoration: none;
+            color: $color-theme-light;
+        }
+    }
+   
+    @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 var(--hover); }
+    }
+}
+
+
+.sub-count, .view-count, .video-count {
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    margin-bottom: 5px;
+}
+
+.center-image {
+    text-align: center;
+    margin-bottom: 5px;
+    img {
+        border-radius: 50%;
+        height: 10rem;
+    }
+}
+
+
+.image-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    background-color: #f3f1f1;
+    width: 90%;
+}
+
+.sub-count {
+    font-size: 6rem;
+}
+
+.sub-count-text {
+    font-size: 3.5rem;
+}
+
+.sub-count-counter {
+    font-size: 4rem;
+}
