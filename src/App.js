@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Footer } from './components';
-import { Home, Error } from './pages';
+import { Home, Error, Search} from './pages';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import './App.css';
 import './switcher.scss';
 import { TiSocialGithub, TiContacts } from "react-icons/ti"
-import { FiMoon } from "react-icons/fi"
+import { FaSearchengin } from 'react-icons/fa'
+
 function App(props) {
     const [isDark, setIsDark] = useState(false);
 
@@ -48,6 +49,9 @@ function App(props) {
                             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                             <Navbar.Collapse id="responsive-navbar-nav">
                                 <Nav className="mr-auto">
+                                    <Link className="nav-link borderBottomWhite" to="/search">
+                                        Search <FaSearchengin />
+                                    </Link>
                                     <Link className="nav-link borderBottomWhite" to="/t/github">
                                         Github <TiSocialGithub />
                                     </Link>
@@ -78,6 +82,7 @@ function App(props) {
                 <main className='mt-5'>
                     <Switch>
                         <Route path="/" exact component={Home} />
+                        <Route path="/search" component={Search} />
                         <Route component={Error} />
                     </Switch>
                 </main>
