@@ -146,6 +146,10 @@ body {
     .search-channels {
         color: $color-theme-light;
     }
+    
+    .results-container {
+        color: black;
+    }
     .search-loading {
         color: $color-theme-dark;
     }
@@ -157,6 +161,15 @@ body {
     font-weight:bold;
     margin-left:-15px;
 }  
+
+
+.rotate-logo {
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.rotate-logo:hover {
+    transform: rotate(360deg);
+}
 
 .logo-image-body {
     border-radius: 50%;

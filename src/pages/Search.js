@@ -20,7 +20,7 @@ class Search extends React.Component {
 
     fetchSearchResults = ( query ) => {
         const { api_key } = config
-        const searchUrl = `https://www.googleapis.com/youtube/v3/channels?part=statistics%2CcontentDetails%2Csnippet&id=${query}&key=${api_key}`
+        const searchUrl = `https://www.googleapis.com/youtube/v3/channels?part=statistics%2CcontentDetails%2CbrandingSettings%2Csnippet&id=${query}&key=${api_key}`
 
         if ( this.cancel ) {
             this.cancel.cancel();
@@ -34,7 +34,7 @@ class Search extends React.Component {
             .then( res => {
                 // console.log(res.data.items[0])
 
-                const resultNotFoundMsg = ! res.data
+                const resultNotFoundMsg = ! res.data.items[0]
                     ? 'There are no more search results, please try a new channel'
                     : '';
                 this.setState( {
@@ -57,22 +57,23 @@ class Search extends React.Component {
     }
     renderSearchResults = () => {
         const { results, loading, message } = this.state;
-    
+        
         if ( results ) {
             return (
-                
                 <div className="results-container">
                     <div className="container">
                             <div className="row">
                                 <div className="col-sm-12">
                                     <div className="card m-b-0 m-t-20">
-                                        <img className="card-img-top img-responsive" src={results.snippet ? results.snippet.thumbnails.default.url : 'https://akshatmittal.com/youtube-realtime/assets/images/banner.jpg'} style={{maxHeight: '150px'}} alt="banner" />
+                                        <img className="card-img-top img-responsive" src={results.brandingSettings ? results.brandingSettings.image.bannerImageUrl : 'https://akshatmittal.com/youtube-realtime/assets/images/banner.jpg'} style={{maxHeight: '175px'}} alt="banner" />
                                         <div className="card-body text-center">
-                                            <div className="card-block center-image">
-                                                <img alt="logo" src={results.snippet ? results.snippet.thumbnails.default.url : ''} />
+                                            <div className="card-block little-profile p-b-0 center-image">
+                                                <div style={{marginTop: '-80px'}}>
+                                                    <img alt="logo" className="rotate-logo" src={results.snippet ? results.snippet.thumbnails.default.url : 'https://yt3.ggpht.com/a/AATXAJzG_RzzNheUdAPucOTvaB4VKLsw8NP8iMpM8rC4eQ=s100-c-k-c0xffffffff-no-rj-mo'} />
+                                                </div>
                                             </div>
-                                            <h5 className="card-title text-center sub-count-text">{results.snippet ? results.snippet.title : ''}</h5>
-                                            <p className="card-text text-center sub-count-counter">{results.statistics ? <CountUp start={0} separator={','} end={results.statistics.subscriberCount} /> : '' }</p>
+                                            <h5 className="card-title text-center sub-count-text">{results.snippet ? results.snippet.title : `PewDiePie`}</h5>
+                                            <p className="card-text text-center sub-count-counter">{results.statistics ? <CountUp start={0} separator={','} suffix=" Subs" end={results.statistics.subscriberCount} /> : <CountUp start={0} separator={','} suffix=" Subs" end={105000000} /> }</p>
                                             <span className="text-center">Subscribers:</span>
                                         </div>
                                     </div>
@@ -87,7 +88,7 @@ class Search extends React.Component {
                                                     <div className="card-body">
                                                         <div className="position-relative">
                                                             <div className="mt-2 ml-2 white">
-                                                                <h1 className="display-5">{results.statistics ? <CountUp start={0} separator={','} end={results.statistics.viewCount} /> : ''}</h1>
+                                                                <h1 className="display-5">{results.statistics ? <CountUp start={0} separator={','} suffix=" Views" end={results.statistics.viewCount} /> : <CountUp start={0} separator={','} suffix=" Views" end={25946888373} />}</h1>
                                                                 <span>Total Views:</span>
                                                             </div>
                                                         </div>
@@ -101,7 +102,7 @@ class Search extends React.Component {
                                                     <div className="card-body">
                                                         <div className="position-relative">
                                                             <div className="mt-2 ml-2 white">
-                                                                <h1 className="display-5">{results.statistics  ? <CountUp start={0} separator={','} end={results.statistics.videoCount} /> : ''}</h1>
+                                                                <h1 className="display-5">{results.statistics  ? <CountUp start={0} suffix=" Videos"  separator={','} end={results.statistics.videoCount} /> : <CountUp start={0} suffix=" Videos"  separator={','} end={4181} /> }</h1>
                                                                 <span>Total Videos:</span>
                                                             </div>
                                                         </div>
@@ -116,7 +117,7 @@ class Search extends React.Component {
                                 <div className="col-sm-12">
                                     <div className="card m-b-0 m-t-20">
                                         <div className="card-body">
-                                        <h4>{results.snippet ? results.snippet.description : ''}</h4>
+                                        <h4>{results.snippet ? results.snippet.description : 'I make videos.'}</h4>
                                         <span>Description:</span>
                                         </div>
                                     </div>
@@ -130,7 +131,7 @@ class Search extends React.Component {
 
     handleOnInputChange = ( event ) => {
         const query = event.target.value;
-        /* this.setState({query: query, loading: true, message: ''}, () => {
+        /* this.setState({query: qukkery, loading: true, message: ''}, () => {
             this.fetchSearchResults( query);
         }) */
         if ( !query) {
@@ -165,7 +166,7 @@ class Search extends React.Component {
                             class="form-control"
                             placeholder="ex: UC-8QAzbLcRglXeN_MY9blyw"
                         />
-                    </form>
+                    </form> 
                 </div>
                 {message && <p className="message text-center">{message}</p>}
                 <div className="text-center">

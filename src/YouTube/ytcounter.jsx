@@ -15,6 +15,7 @@ class YoutuberCounterr extends React.Component {
         const data = await response.json();
         console.log(data)
         this.setState({youtube: data.items[0].statistics, loading: false})
+
     }
 
     render() {
