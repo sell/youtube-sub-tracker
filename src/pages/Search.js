@@ -152,7 +152,7 @@ class Search extends React.Component {
 
         const { query, loading, message } = this.state;
         return (
-            <div>
+            <div className="search-channels">
                 <div className="container">
                     <label for="query">Search Channel by ID: </label>
                     <form className="form mb-1">

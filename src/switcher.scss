@@ -38,7 +38,7 @@ body {
         }
     }
     code {
-        color: #fb644c
+        color: #eef5f9
     }
 
 }
@@ -87,7 +87,7 @@ body {
             }
             .switch-handle {
                 transform: translateX(20px);
-                background-color: #fb644c;
+                background-color: #eef5f9;
             }
         }
     }
@@ -100,7 +100,7 @@ body {
         background-color: #333;
         h3,
         h5 {
-            color: #fb644c;
+            color: #eef5f9;
         }
         p {
             color: #ccc;
@@ -131,17 +131,23 @@ body {
     button:hover {
         a {
             animation: 1s ease-in-out;
-            color: #fb644c;
+            color: #eef5f9;
             cursor: pointer;
         }
     }
 
     code {
-        color: #fb644c
+        color: #eef5f9
     }
 
     .sub-count-page {
         color: $color-theme-light;
+    }
+    .search-channels {
+        color: $color-theme-light;
+    }
+    .search-loading {
+        color: $color-theme-dark;
     }
 }
 
