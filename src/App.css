@@ -27,3 +27,9 @@ main {
     padding-top: 20px;
 }
 
+@media only screen and (max-width: 991px) {
+    .mb-nine-px {
+        margin-bottom: 8px;
+    }
+
+}

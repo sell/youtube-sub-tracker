@@ -86,6 +86,18 @@ function App(props) {
                         <Route path="/t/contact" component={Contact} />
                         <Route component={Error} />
                     </Switch>
+                    <div className="box">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
                 </main>
                 <Footer />
             </div>

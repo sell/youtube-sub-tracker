@@ -94,6 +94,7 @@ body {
 }
 
 .App.theme-dark {
+    
     background-color: $bg-theme-dark;
     color: $color-theme-dark;
     .content-box {
@@ -128,6 +129,9 @@ body {
                 transition: all 0.3s ease-in-out 0s;
         }
     }
+    label {
+        color: white;
+    }
     button:hover {
         a {
             animation: 1s ease-in-out;
@@ -152,6 +156,121 @@ body {
     }
     .search-loading {
         color: $color-theme-dark;
+    }
+
+    .box {
+        div {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: transparent;
+            border: 6px solid rgba($color: #fff, $alpha: 0.8)
+        }
+        div:nth-child(1){
+            top: 12%;
+            left: 42%;
+            animation: animate 10s linear infinite;
+        }
+        div:nth-child(2){
+            top: 70%;
+            left: 50%;
+            animation: animate 7s linear infinite;
+        }
+        div:nth-child(3){
+            top: 17%;
+            left: 6%;
+            animation: animate 9s linear infinite;
+        }
+        div:nth-child(4){
+            top: 20%;
+            left: 60%;
+            animation: animate 10s linear infinite;
+        }
+        div:nth-child(5){
+            top: 67%;
+            left: 10%;
+            animation: animate 6s linear infinite;
+        }
+        div:nth-child(6){
+            top: 80%;
+            left: 70%;
+            animation: animate 12s linear infinite;
+        }
+        div:nth-child(7){
+            top: 60%;
+            left: 80%;
+            animation: animate 15s linear infinite;
+        }
+        div:nth-child(8){
+            top: 32%;
+            left: 25%;
+            animation: animate 16s linear infinite;
+        }
+        div:nth-child(9){
+            top: 90%;
+            left: 25%;
+            animation: animate 9s linear infinite;
+        }
+        div:nth-child(10){
+            top: 20%;
+            left: 80%;
+            animation: animate 5s linear infinite;
+        }
+    }
+
+    @keyframes animate {
+        0% {
+            transform: scale(0) translateY(0) rotate(0);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1.3) translateY(-90px) rotate(160deg);
+            opacity: 0;
+        }
+    }
+
+    
+}
+
+.line {
+    position: relative;
+    
+    margin: 0 auto;
+    text-align: center;
+    white-space: nowrap;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    overflow: hidden;
+    font-size: 50px;
+}
+
+.anim-typewriter {
+    animation: typewriter 4s steps(40) 1s 1 normal both,
+    blinkTextCursor 500ms steps(40) infinite normal;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    } to {
+        width: 5.3em;
+    }
+}
+
+@keyframes blinkTextCursor {
+    from {
+        border-right-color: rgba(255, 255, 255, 0.75) ;
+    } to {
+        border-right-color: transparent;
+    }
+}
+
+.form-group-box {
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 991px) {
+    .line {
+        font-size: 25px;
     }
 }
 
@@ -260,4 +379,45 @@ body {
 
 .hide {
     display: none;
+}
+
+.social-media-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border: none;
+}
+
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+    animation-name: border-move;
+    animation-duration: 4s;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    align-items: center;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    border: none;
+    line-height: 20px;
+    font-size: 30px;
+}
+
+.social-media-icons:hover {
+    cursor: pointer;
+}
+
+@keyframes border-move {
+   
+    0% {
+        border-color: red;
+        border: none;
+    }
+
+    
+    100% {
+        border: 1px solid white;
+    }
 }

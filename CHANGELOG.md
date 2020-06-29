@@ -8,6 +8,7 @@
 + Form
 + Error Handling with form
 + Coffee widget
++ Animation on Dark Mode Background
 ```
 
 **Removed:**

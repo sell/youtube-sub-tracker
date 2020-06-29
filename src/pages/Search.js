@@ -84,7 +84,7 @@ class Search extends React.Component {
                             <div className="row mt-2">
                                 <div className="col-sm-12" id="yt_sharear2">
                                     <div className="row">
-                                        <div className="col-12 col-lg-7">
+                                        <div className="col-12 col-lg-7 mb-nine-px">
                                             <div className="card">
                                                 <div className="card-block">
                                                     <div className="card-body">
@@ -166,7 +166,7 @@ class Search extends React.Component {
         return (
             <div className="search-channels">
                 <div className="container">
-                    <label for="query">Search Channel by ID: </label>
+                    <label htmlFor="query">Search Channel by ID: </label>
                     <form className="form mb-2">
                         <input
                             type="text"
@@ -174,7 +174,7 @@ class Search extends React.Component {
                             name="query"
                             id="search-input"
                             onChange={this.formChange}
-                            class="form-control"
+                            className="form-control"
                             placeholder="ex: UC-8QAzbLcRglXeN_MY9blyw"
                         />
 
