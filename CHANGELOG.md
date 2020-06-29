@@ -9,7 +9,7 @@
 + Error Handling with form
 + Coffee widget
 + Added Simple Analytics (will open stats publicly)
-+ Modified colors
++ Modified colors / error page
 + Animation on Dark Mode and light mode Background
 ```
 
