@@ -130,6 +130,9 @@ class Search extends React.Component {
     }
 
     handleOnInputChange = ( event ) => {
+        if(event.key === 'Enter'){
+            console.log('enter press here! ')
+          }
         const query = event.target.value;
         /* this.setState({query: qukkery, loading: true, message: ''}, () => {
             this.fetchSearchResults( query);

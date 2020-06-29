@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Footer } from './components';
-import { Home, Error, Search} from './pages';
+import { Home, Error, Search, Contact} from './pages';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -83,6 +83,7 @@ function App(props) {
                     <Switch>
                         <Route path="/" exact component={Home} />
                         <Route path="/search" component={Search} />
+                        <Route path="/t/contact" component={Contact} />
                         <Route component={Error} />
                     </Switch>
                 </main>
