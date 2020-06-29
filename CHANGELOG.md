@@ -11,6 +11,7 @@
 + Added Simple Analytics (will open stats publicly)
 + Modified colors / error page
 + Animation on Dark Mode and light mode Background
++ Ability to search channel by custom url name (might remove again)
 ```
 
 **Removed:**

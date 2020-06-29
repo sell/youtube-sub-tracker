@@ -22,8 +22,9 @@ class Search extends React.Component {
 
     fetchSearchResults = ( query ) => {
         const { api_key } = config
-        const searchUrl = `https://www.googleapis.com/youtube/v3/channels?part=statistics%2CcontentDetails%2CbrandingSettings%2Csnippet&id=${query}&key=${api_key}`
-
+        // let forUsername = 'forUsername';
+        const searchUrl =  `https://www.googleapis.com/youtube/v3/channels?part=statistics%2CcontentDetails%2CbrandingSettings%2Csnippet&id=${query}&key=${api_key}`
+        const searchUrlChannel = `https://www.googleapis.com/youtube/v3/channels?part=statistics%2CcontentDetails%2CbrandingSettings%2Csnippet&forUsername=${query}&key=${api_key}`
         if ( this.cancel ) {
             this.cancel.cancel();
         }
@@ -52,10 +53,39 @@ class Search extends React.Component {
                 if (axios.isCancel(error) || error ) {
                     this.setState( {
                         loading: false,
-                        message: 'Failed to fetch the data.'
+                        message: 'Failed to fetch the data.',
                     })
                 }
             }) 
+
+            // delete this one if errors occur, this is the channel url
+
+            axios.get( searchUrlChannel, {
+                cancelToken: this.cancel.token
+            } )
+                .then( res => {
+                    // console.log(res.data.items[0])
+    
+                    const resultNotFoundMsg = ! res.data.items[0]
+                        ? 'There are no more search results, please try a new channel'
+                        : '';
+                    this.setState( {
+                        results: res.data.items[0],
+                        message: resultNotFoundMsg,
+                        loading: false
+                    })
+    
+                    // console.log(this.state)
+                    
+                })
+                .catch( error => {
+                    if (axios.isCancel(error) || error ) {
+                        this.setState( {
+                            loading: false,
+                            message: 'Failed to fetch the data.',
+                        })
+                    }
+                }) 
     }
     renderSearchResults = () => {
         const { results } = this.state;
@@ -168,7 +198,13 @@ class Search extends React.Component {
         return (
             <div className="search-channels">
                 <div className="container">
-                    <label htmlFor="query">Search Channel by ID: </label>
+                    <label htmlFor="query"> 
+                        If channel has a custom url like this: 'https://www.youtube.com/user/PewDiePie', you enter <strong>PewDiePie</strong>.
+                        <br></br>
+                        If channel has url like this: 'https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw', you enter <strong>UC-lHJZR3Gqxm24_Vd_AJ5Yw</strong>
+                        <br></br>
+                        Search Channel by ID or by Channel Custom URL Name:
+                    </label>
                     <form className="form mb-2">
                         <input
                             type="text"
@@ -177,7 +213,7 @@ class Search extends React.Component {
                             id="search-input"
                             onChange={this.formChange}
                             className="form-control"
-                            placeholder="ex: UC-8QAzbLcRglXeN_MY9blyw"
+                            placeholder="ex: UC-8QAzbLcRglXeN_MY9blyw, pewdiepie"
                         />
 
                         <button type="button" className="btn btn-block btn-dark mt-1" value={query} onClick={this.handleOnInputChange}>Submit</button>
