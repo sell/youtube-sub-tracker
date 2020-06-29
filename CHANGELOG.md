@@ -3,18 +3,24 @@
 ## - 6/29/2020
 
 **Added:**
-- Button to search
-- Form
+```diff
++ Button to search
++ Form
+```
 
 **Removed:**
+```diff
 - Constant api pinging when typing
+```
 
 ## - 6/28/2020
 
 **Added:**
-- Custom Search
-- Fixed Some Bugs
-- Banners & Descriptions
+```diff
++ Custom Search
++ Fixed Some Bugs
++ Banners & Descriptions
+```
 
 ## - 6/27/2020
 
