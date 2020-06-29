@@ -73,8 +73,10 @@ class Search extends React.Component {
                                                 <div style={{marginTop: '-80px'}}>
                                                     <img alt="logo" className="rotate-logo" src={results.snippet ? results.snippet.thumbnails.default.url : 'https://yt3.ggpht.com/a/AATXAJzG_RzzNheUdAPucOTvaB4VKLsw8NP8iMpM8rC4eQ=s100-c-k-c0xffffffff-no-rj-mo'} />
                                                 </div>
+
+                                                <h3 className="display-6 m-b-15 m-t-10 text-center yt_name">{results.snippet ? results.snippet.title : `PewDiePie`}</h3>
                                             </div>
-                                            <h5 className="card-title text-center sub-count-text">{results.snippet ? results.snippet.title : `PewDiePie`}</h5>
+                                            
                                             <p className="card-text text-center sub-count-counter">{results.statistics ? <CountUp start={0} separator={','} suffix=" Subs" end={results.statistics.subscriberCount} /> : <CountUp start={0} separator={','} suffix=" Subs" end={105000000} /> }</p>
                                             <span className="text-center">Subscribers:</span>
                                         </div>

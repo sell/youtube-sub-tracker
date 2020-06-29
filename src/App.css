@@ -33,3 +33,15 @@ main {
     }
 
 }
+
+h3 {
+    line-height: 30px;
+    font-size: 21px;
+    color: #455a64;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.display-6 {
+    font-size: 36px;
+}

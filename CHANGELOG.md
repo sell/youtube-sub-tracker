@@ -8,12 +8,15 @@
 + Form
 + Error Handling with form
 + Coffee widget
-+ Animation on Dark Mode Background
++ Added Simple Analytics (will open stats publicly)
++ Modified colors
++ Animation on Dark Mode and light mode Background
 ```
 
 **Removed:**
 ```diff
 - Constant api pinging when typing
+- Animation on Dark Mode Background
 ```
 
 ## - 6/28/2020
