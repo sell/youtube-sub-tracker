@@ -41,7 +41,7 @@ const encode = (data) => {
         return (
             <div className="container align-items-center justify-content-center">
                 <div className="form-group">
-                    <form name="contact" onSubmit={this.handleSubmit}>
+                    <form name="contact" data-netlify-recaptcha="true" onSubmit={this.handleSubmit}>
                         <input type="hidden" name="form-name" value="contact" />
                         <p>
                             <label for="name" className="col-sm-2 col-form-label">Your Name:</label>
@@ -66,6 +66,7 @@ const encode = (data) => {
                                 <button className="btn btn-dark" type="submit">Send</button>
                             </div>
                         </p>
+                        <div data-netlify-recaptcha="true"></div>
                     </form>
                 </div>
             </div>

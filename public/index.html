@@ -23,10 +23,11 @@
         </div>
       </div>
     </noscript>
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <form name="contact" netlify netlify-honeypot="bot-field" data-netlify-recaptcha="true" hidden>
       <input type="text" name="name" />
       <input type="email" name="email" />
       <textarea name="message"></textarea>
+      <div data-netlify-recaptcha="true"></div>
     </form>
     <div id="root"></div>
   </body>
