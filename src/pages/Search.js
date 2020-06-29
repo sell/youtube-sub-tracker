@@ -8,11 +8,13 @@ class Search extends React.Component {
     constructor( props ) {
         super( props );
 
+
         this.state = {
             query: '',
             results: {},
             loading: false,
-            message: ''
+            message: '',
+            querySearch: ''
         }
 
         this.cancel = '';
@@ -56,7 +58,7 @@ class Search extends React.Component {
             }) 
     }
     renderSearchResults = () => {
-        const { results, loading, message } = this.state;
+        const { results } = this.state;
         
         if ( results ) {
             return (
@@ -65,7 +67,7 @@ class Search extends React.Component {
                             <div className="row">
                                 <div className="col-sm-12">
                                     <div className="card m-b-0 m-t-20">
-                                        <img className="card-img-top img-responsive" src={results.brandingSettings ? results.brandingSettings.image.bannerImageUrl : 'https://akshatmittal.com/youtube-realtime/assets/images/banner.jpg'} style={{maxHeight: '175px'}} alt="banner" />
+                                        <img className="card-img-top img-responsive" src={results.brandingSettings ? results.brandingSettings.image.bannerImageUrl : 'https://akshatmittal.com/youtube-realtime/assets/images/banner.jpg'} style={{maxHeight: '200px'}} alt="banner" />
                                         <div className="card-body text-center">
                                             <div className="card-block little-profile p-b-0 center-image">
                                                 <div style={{marginTop: '-80px'}}>
@@ -129,14 +131,19 @@ class Search extends React.Component {
         }
     }
 
-    handleOnInputChange = ( event ) => {
-        if(event.key === 'Enter'){
-            console.log('enter press here! ')
-          }
-        const query = event.target.value;
-        /* this.setState({query: qukkery, loading: true, message: ''}, () => {
-            this.fetchSearchResults( query);
-        }) */
+    
+    formChange = ( event ) => {
+        
+        this.setState({querySearch: event.target.value})
+        // let querySearch = event.target.value;
+        // console.log(querySearch)
+
+    }
+    
+    handleOnInputChange = ( ) => {
+        
+        const query = this.state.querySearch;
+        // console.log(query)
         if ( !query) {
             this.setState( {
                 query,
@@ -153,22 +160,26 @@ class Search extends React.Component {
 
     
     render() {
-
+        
         const { query, loading, message } = this.state;
+        let querySearch;
         return (
             <div className="search-channels">
                 <div className="container">
                     <label for="query">Search Channel by ID: </label>
-                    <form className="form mb-1">
+                    <form className="form mb-2">
                         <input
                             type="text"
-                            value={query}
+                            value={querySearch}
                             name="query"
-                            id="search-output"
-                            onChange={this.handleOnInputChange}
+                            id="search-input"
+                            onChange={this.formChange}
                             class="form-control"
                             placeholder="ex: UC-8QAzbLcRglXeN_MY9blyw"
                         />
+
+                        <button type="button" className="btn btn-block btn-dark mt-1" value={query} onClick={this.handleOnInputChange}>Submit</button>
+                        
                     </form> 
                 </div>
                 {message && <p className="message text-center">{message}</p>}

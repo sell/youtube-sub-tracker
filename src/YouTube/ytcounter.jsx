@@ -13,7 +13,7 @@ class YoutuberCounterr extends React.Component {
         const apiCall = `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${channel_id}&key=${api_key}`;
         const response = await fetch(apiCall)
         const data = await response.json();
-        console.log(data)
+        // console.log(data)
         this.setState({youtube: data.items[0].statistics, loading: false})
 
     }
@@ -27,10 +27,10 @@ class YoutuberCounterr extends React.Component {
                             <div className="row">
                                 <div className="col-sm-12">
                                     <div className="card m-b-0 m-t-20">
-                                        <img className="card-img-top img-responsive" src="https://akshatmittal.com/youtube-realtime/assets/images/banner.jpg" style={{maxHeight: '150px'}} alt="thumbnail" />
+                                        <img className="card-img-top img-responsive" src="https://akshatmittal.com/youtube-realtime/assets/images/banner.jpg" style={{maxHeight: '200px'}} alt="thumbnail" />
                                         <div className="card-body">
                                             <div className="card-block center-image">
-                                                <img alt="Shane" src="https://yt3.ggpht.com/a/AATXAJxMp2mWds-xeDubthrwN6BPvxd3zJSVlNX8aY4_FQ=s100-c-k-c0xffffffff-no-rj-mo" />
+                                                <img className='rotate-logo' alt="Shane" src="https://yt3.ggpht.com/a/AATXAJxMp2mWds-xeDubthrwN6BPvxd3zJSVlNX8aY4_FQ=s100-c-k-c0xffffffff-no-rj-mo" style={{marginTop: '-80px'}} />
                                             </div>
                                             <h5 className="card-title text-center sub-count-text">Shane Dawson</h5>
                                             <p className="card-text text-center sub-count-counter"><CountUp start={0} suffix=" Subs" separator="," end={this.state.youtube.subscriberCount} /></p>
