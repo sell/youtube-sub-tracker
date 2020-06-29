@@ -6,6 +6,7 @@
 ```diff
 + Button to search
 + Form
++ Error Handling with form
 ```
 
 **Removed:**
@@ -23,5 +24,6 @@
 ```
 
 ## - 6/27/2020
-
-Inital Relasese
+```diff
+@@ Inital Relasese @@
+```
