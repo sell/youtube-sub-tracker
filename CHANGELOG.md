@@ -7,6 +7,7 @@
 + Button to search
 + Form
 + Error Handling with form
++ Coffee widget
 ```
 
 **Removed:**
