@@ -28,7 +28,7 @@ class YoutuberCounterr extends React.Component {
                             <div className="row">
                                 <div className="col-sm-12">
                                     <div className="card m-b-0 m-t-20">
-                                        <img className="card-img-top img-responsive" src="https://akshatmittal.com/youtube-realtime/assets/images/banner.jpg" style={{maxHeight: '200px'}} alt="thumbnail" />
+                                        <img className="card-img-top img-responsive" src="https://yt3.ggpht.com/Al1Cc_VNaYMH_Pu9f3_yRcHI_xCwWC8R5K89L15G8sfR7jYFTon5OKK9X5Uv0hE3l0W2BcJpQp8=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj" style={{maxHeight: '200px'}} alt="thumbnail" />
                                         <div className="card-body">
                                             <div className="card-block center-image">
                                                 <img className='rotate-logo' alt="Shane" src="https://yt3.ggpht.com/a/AATXAJxMp2mWds-xeDubthrwN6BPvxd3zJSVlNX8aY4_FQ=s100-c-k-c0xffffffff-no-rj-mo" style={{marginTop: '-80px'}} />

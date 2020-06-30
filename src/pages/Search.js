@@ -3,6 +3,8 @@ import axios from 'axios'
 import config from '../YouTube/config';
 import CountUp from 'react-countup'
 import Loader from '../images/loader.gif'
+import About from '../components/FAQ';
+import FAQ from '../components/About';
 class Search extends React.Component {
 
     constructor( props ) {
@@ -97,7 +99,7 @@ class Search extends React.Component {
                             <div className="row">
                                 <div className="col-sm-12">
                                     <div className="card m-b-0 m-t-20">
-                                        <img className="card-img-top img-responsive" src={results.brandingSettings ? results.brandingSettings.image.bannerImageUrl : 'https://akshatmittal.com/youtube-realtime/assets/images/banner.jpg'} style={{maxHeight: '200px'}} alt="banner" />
+                                        <img className="card-img-top img-responsive" src={results.brandingSettings ? results.brandingSettings.image.bannerImageUrl : 'https://yt3.ggpht.com/wuqXYCeCdttO0TcwBJR2yy0uJP2hPwTPdrDQpjD00t0Xd_81t6dYeLdVMR24ArD4kuIpWO4hWg=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj'} style={{maxHeight: '200px'}} alt="banner" />
                                         <div className="card-body text-center">
                                             <div className="card-block little-profile p-b-0 center-image">
                                                 <div style={{marginTop: '-80px'}}>
@@ -199,10 +201,6 @@ class Search extends React.Component {
             <div className="search-channels">
                 <div className="container">
                     <label htmlFor="query"> 
-                        If channel has a custom url like this: 'https://www.youtube.com/user/PewDiePie', you enter <strong>PewDiePie</strong>.
-                        <br></br>
-                        If channel has url like this: 'https://www.youtube.com/channel/UC-lHJZR3Gqxm24_Vd_AJ5Yw', you enter <strong>UC-lHJZR3Gqxm24_Vd_AJ5Yw</strong>
-                        <br></br>
                         Search Channel by ID or by Channel Custom URL Name:
                     </label>
                     <form className="form mb-2">
@@ -225,6 +223,10 @@ class Search extends React.Component {
                     <img src={Loader} className={`search-loading ${ loading ? 'show' : 'hide'}`} alt="loader" />
                 </div>
                 {this.renderSearchResults()}
+                <div className="container">
+                    <About />
+                    <FAQ />
+                </div>
             </div>
         )
     }

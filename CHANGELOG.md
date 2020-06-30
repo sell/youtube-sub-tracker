@@ -1,5 +1,15 @@
 # Change log
 
+## - 6/30/2020
+
+**Added:**
+```diff
++ Styling Modifications
++ Fixed Banners
++ Added About Section
++ Added Web Page Stats
++ FAQ and About
+```
 ## - 6/29/2020
 
 **Added:**
