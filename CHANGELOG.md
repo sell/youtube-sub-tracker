@@ -9,6 +9,7 @@
 + Added About Section
 + Added Web Page Stats
 + FAQ and About
++ Fixed Main home page count
 ```
 ## - 6/29/2020
 
