@@ -19,7 +19,7 @@ class Home extends React.Component {
         "method": "GET",
         "mode": "cors"
         }).then(r => r.json()).then(j => {
-            console.log(j)
+            // console.log(j)
             this.setState({
                 stats: j.ip,
                 loading: false
