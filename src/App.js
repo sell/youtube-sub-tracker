@@ -9,6 +9,7 @@ import './App.css';
 import './switcher.scss';
 import { TiSocialGithub, TiContacts } from "react-icons/ti"
 import { FaSearchengin } from 'react-icons/fa'
+import Axios from 'axios';
 
 function App(props) {
     const [isDark, setIsDark] = useState(false);
@@ -30,6 +31,7 @@ function App(props) {
             setIsDark(true)
         }
     }
+
     return (
         <Router>
             <div className={`App ${isDark ? 'theme-dark' : ''}`}>

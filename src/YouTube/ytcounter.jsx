@@ -34,22 +34,22 @@ class YoutuberCounterr extends React.Component {
                                                 <img className='rotate-logo' alt="Shane" src="https://yt3.ggpht.com/a/AATXAJxMp2mWds-xeDubthrwN6BPvxd3zJSVlNX8aY4_FQ=s100-c-k-c0xffffffff-no-rj-mo" style={{marginTop: '-80px'}} />
                                             </div>
                                             <h5 className="card-title text-center sub-count-text">Shane Dawson</h5>
-                                            <p className="card-text text-center sub-count-counter">{this.state.loading || !this.state.youtube ? ( <div> loading Data... </div>) : (<CountUp start={0} suffix=" Subs" separator="," end={this.state.youtube.subscriberCount} />)}</p>
+                                            <p className="card-text text-center sub-count-counter">{this.state.loading || !this.state.youtube ? ( <p> loading Data... </p>) : (<CountUp start={0} suffix=" Subs" separator="," end={this.state.youtube.subscriberCount} />)}</p>
                                             <span className="text-center">Subscribers:</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mt-2">
-                                <div class="col-sm-12">
-                                    <div class="row">
-                                        <div class="col-12 col-lg-7">
-                                            <div class="card mb-nine-px">
-                                                <div class="card-block">
-                                                    <div class="card-body">
-                                                        <div class="position-relative">
-                                                            <div class="mt-2 ml-2 white">
-                                                                <h1 className="display-5">{this.state.loading || !this.state.youtube ? ( <div> loading Data... </div>) : ( <CountUp start={0} suffix=" Views" separator="," end={this.state.youtube.viewCount} /> )}</h1>
+                            <div className="row mt-2">
+                                <div className="col-sm-12">
+                                    <div className="row">
+                                        <div className="col-12 col-lg-7">
+                                            <div className="card mb-nine-px">
+                                                <div className="card-block">
+                                                    <div className="card-body">
+                                                        <div className="position-relative">
+                                                            <div className="mt-2 ml-2 white">
+                                                                <h1 className="display-5">{this.state.loading || !this.state.youtube ? ( <p> loading Data... </p>) : ( <CountUp start={0} suffix=" Views" separator="," end={this.state.youtube.viewCount} /> )}</h1>
                                                                 <span>Total Views:</span>
                                                             </div>
                                                         </div>
@@ -57,13 +57,13 @@ class YoutuberCounterr extends React.Component {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-12 col-lg-5">
-                                            <div class="card">
-                                                <div class="card-block">
-                                                    <div class="card-body">
-                                                        <div class="position-relative">
-                                                            <div class="mt-2 ml-2 white">
-                                                                <h1 class="display-5">{this.state.loading || !this.state.youtube ? ( <div> loading Data... </div>) : ( <CountUp start={0} suffix=" Videos" end={this.state.youtube.videoCount} /> )}</h1>
+                                        <div className="col-12 col-lg-5">
+                                            <div className="card">
+                                                <div className="card-block">
+                                                    <div className="card-body">
+                                                        <div className="position-relative">
+                                                            <div className="mt-2 ml-2 white">
+                                                                <h1 className="display-5">{this.state.loading || !this.state.youtube ? ( <p> loading Data... </p>) : ( <CountUp start={0} suffix=" Videos" end={this.state.youtube.videoCount} /> )}</h1>
                                                                 <span>Total Videos:</span>
                                                             </div>
                                                         </div>
@@ -72,16 +72,16 @@ class YoutuberCounterr extends React.Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row mt-2">
-                                        <div class="col-sm-12">
-                                            <div class="row">
-                                                <div class="col-12 col-lg-5">
-                                                    <div class="card mb-nine-px">
-                                                        <div class="card-block">
-                                                            <div class="card-body">
-                                                                <div class="position-relative">
-                                                                    <div class="mt-2 ml-2 white">
-                                                                        <h1 className="display-5">{this.state.loading || !this.state.youtube ? ( <div> loading Data... </div>) : ( <CountUp start={0} prefix="-"suffix=" Videos" separator="," end={700 - this.state.youtube.videoCount}/> )}</h1>
+                                    <div className="row mt-2">
+                                        <div className="col-sm-12">
+                                            <div className="row">
+                                                <div className="col-12 col-lg-5">
+                                                    <div className="card mb-nine-px">
+                                                        <div className="card-block">
+                                                            <div className="card-body">
+                                                                <div className="position-relative">
+                                                                    <div className="mt-2 ml-2 white">
+                                                                        <h1 className="display-5">{this.state.loading || !this.state.youtube ? ( <p> loading Data... </p>) : ( <CountUp start={0} prefix="-"suffix=" Videos" separator="," end={700 - this.state.youtube.videoCount}/> )}</h1>
                                                                         <span>Total Videos Deleted:</span>
                                                                     </div>
                                                                 </div>
@@ -89,13 +89,13 @@ class YoutuberCounterr extends React.Component {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-12 col-lg-7">
-                                                    <div class="card mb-nine-px">
-                                                        <div class="card-block">
-                                                            <div class="card-body">
-                                                                <div class="position-relative">
-                                                                    <div class="mt-2 ml-2 white">
-                                                                        <h1 className="display-5">{this.state.loading || !this.state.youtube ? ( <div> loading Data... </div>) : ( <CountUp start={0} prefix="-"suffix=" Subs" separator="," end={22800000 - this.state.youtube.subscriberCount}/> )}</h1>
+                                                <div className="col-12 col-lg-7">
+                                                    <div className="card mb-nine-px">
+                                                        <div className="card-block">
+                                                            <div className="card-body">
+                                                                <div className="position-relative">
+                                                                    <div className="mt-2 ml-2 white">
+                                                                        <h1 className="display-5">{this.state.loading || !this.state.youtube ? ( <p> loading Data... </p>) : ( <CountUp start={0} prefix="-"suffix=" Subs" separator="," end={22800000 - this.state.youtube.subscriberCount}/> )}</h1>
                                                                         <span>Total Subs Lost:</span>
                                                                     </div>
                                                                 </div>

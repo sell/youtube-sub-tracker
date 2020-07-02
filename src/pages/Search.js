@@ -88,6 +88,7 @@ class Search extends React.Component {
                         })
                     }
                 }) 
+
     }
     renderSearchResults = () => {
         const { results } = this.state;

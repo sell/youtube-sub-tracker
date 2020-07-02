@@ -18,9 +18,11 @@ class Stats extends React.Component {
             stats: data,
             loading: false
         })
+
     }
 
     render() {
+        
         return (
             <div>
                 {this.state.loading || !this.state.stats ? ( <div> loading Data... </div>) : (
