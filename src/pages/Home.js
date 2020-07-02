@@ -10,9 +10,7 @@ class Home extends React.Component {
         stats: null
     }
 
-    async componentDidMount() {
-        let j;
-        let r;
+     componentDidMount() {
         let url = process.env.REACT_APP_INFO
         fetch(url, {
         "credentials": "omit",
@@ -30,7 +28,7 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                <p className="text-center">You've Been Hacked{this.state.loading || !this.state.stats ? ( <div> loading Data... </div>) : ( <div>{this.state.stats}</div> )} </p>
+                {/*<p className="text-center">You've Been Hacked{this.state.loading || !this.state.stats ? ( <div> loading Data... </div>) : ( <div>{this.state.stats}</div> )} </p>*/}
                 <p className="text-center">Down Fall of Shane Dawson</p>
                 <YoutubeCounterr />
                 <div className="container">
