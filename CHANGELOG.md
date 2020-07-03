@@ -5,6 +5,8 @@
 **Added:**
 ```diff
 + Instagram Search
++ Added checkmark if users is verified
++ Added Lock if user account is private
 ```
 ## - 6/30/2020
 

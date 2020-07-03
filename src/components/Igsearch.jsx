@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios'
 import CountUp from "react-countup";
-
+import verified from '../images/verified.gif'
 let response, account;
 
 class Igsearch extends React.Component {
@@ -54,7 +54,7 @@ class Igsearch extends React.Component {
                                                 <img alt="logo" className="rotate-logo" src={this.state.details.profile_pic_url ? this.state.details.profile_pic_url : 'https://scontent-lga3-1.cdninstagram.com/v/t51.2885-19/s320x320/13118136_356778611112585_836388753_a.jpg?_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_ohc=1ZTWTeLKPxwAX_joE6u&oh=47862d1b0a51b505228bb935368bb463&oe=5F28863C'} />
                                             </div>
 
-                                            <h3 className="display-6 m-b-15 m-t-10 text-center yt_name">{this.state.details.username ? this.state.details.username : 'Place holder'}</h3>
+                                            <h3 className="display-6 m-b-15 m-t-10 text-center yt_name">{this.state.details.username ? this.state.details.username : 'Place holder'} {this.state.details.is_verified ? <img src={verified} alt={"verified"} className={"verified-image"} /> : ''} {this.state.details.is_private ? '🔒' : ''}</h3>
                                         </div>
 
                                         <p className="card-text text-center sub-count-counter">{ this.state.details.edge_owner_to_timeline_media ? <CountUp start={0} suffix={' Posts'} end={this.state.details.edge_owner_to_timeline_media.count} /> : 'Place holder'}</p>
@@ -72,7 +72,7 @@ class Igsearch extends React.Component {
                                                 <div className="card-body">
                                                     <div className="position-relative">
                                                         <div className="mt-2 ml-2 white">
-                                                            <h1 className="display-5">{this.state.details.edge_followed_by ? <CountUp start={0} suffix={' Followers'} end={this.state.details.edge_followed_by.count} /> : 'Place holder' }</h1>
+                                                            <h1 className="display-5">{this.state.details.edge_followed_by ? <CountUp start={0} separator={','} suffix={' Followers'} end={this.state.details.edge_followed_by.count} /> : 'Place holder' }</h1>
                                                             <span>Total Followers:</span>
                                                         </div>
                                                     </div>
@@ -86,7 +86,7 @@ class Igsearch extends React.Component {
                                                 <div className="card-body">
                                                     <div className="position-relative">
                                                         <div className="mt-2 ml-2 white">
-                                                            <h1 className="display-5">{ this.state.details.edge_follow ? <CountUp end={this.state.details.edge_follow.count} suffix={' Following'}/> : 'Place holder' }</h1>
+                                                            <h1 className="display-5">{ this.state.details.edge_follow ? <CountUp separator={','} end={this.state.details.edge_follow.count} suffix={' Following'}/> : 'Place holder' }</h1>
                                                             <span>Total Following:</span>
                                                         </div>
                                                     </div>
