@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import YoutubeCounterr from '../YouTube/ytcounter';
 import About from '../components/FAQ';
 import FAQ from '../components/About';

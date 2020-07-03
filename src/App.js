@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Footer } from './components';
-import { Home, Error, Search, Contact, Stats} from './pages';
+import { Home, Error, Search, Contact, Stats, Instagram } from './pages';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -9,7 +9,6 @@ import './App.css';
 import './switcher.scss';
 import { TiSocialGithub, TiContacts } from "react-icons/ti"
 import { FaSearchengin } from 'react-icons/fa'
-import Axios from 'axios';
 
 function App(props) {
     const [isDark, setIsDark] = useState(false);
@@ -31,7 +30,6 @@ function App(props) {
             setIsDark(true)
         }
     }
-
     return (
         <Router>
             <div className={`App ${isDark ? 'theme-dark' : ''}`}>
@@ -85,6 +83,7 @@ function App(props) {
                     <Switch>
                         <Route path="/" exact component={Home} />
                         <Route path="/search" component={Search} />
+                        <Route path="/instagram" component={Instagram} />
                         <Route path="/t/contact" component={Contact} />
                         <Route path="/t/w/stats" component={Stats} />
                         <Route component={Error} />

@@ -40,7 +40,7 @@ const encode = (data) => {
     render() {
         const { name, email, message } = this.state;
         return (
-            <div className="container display-flex align-items-center">
+            <div className="container display-flex">
                 <p className="line anim-typewriter">
                     Contact Me
                 </p>

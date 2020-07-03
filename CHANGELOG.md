@@ -1,5 +1,11 @@
 # Change log
 
+## - 7/3/2020
+
+**Added:**
+```diff
++ Instagram Search
+```
 ## - 6/30/2020
 
 **Added:**
