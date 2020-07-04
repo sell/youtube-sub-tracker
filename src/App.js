@@ -52,6 +52,9 @@ function App(props) {
                                     <Link className="nav-link borderBottomWhite" to="/search">
                                         Search <FaSearchengin />
                                     </Link>
+                                    <Link className="nav-link borderBottomWhite" to="/instagram">
+                                        Instagram Search <FaSearchengin />
+                                    </Link>
                                     <Link className="nav-link borderBottomWhite" to="/t/github">
                                         Github <TiSocialGithub />
                                     </Link>
