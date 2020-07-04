@@ -21,18 +21,13 @@ class IgSearch extends Component {
 
         const { data: account } = await axios.get(url);
 
-        this.setState({
-            details: account.graphql.user
-        });
-    }
+        const details = account.graphql.user;
 
-    async componentDidUpdate(_, prevState) {
-        // const HEROKU_URL = 'https://igcount-backend.herokuapp.com/api/inputs';
-        const backendUrl = 'https://igcount-backend.herokuapp.com/api/inputs';
-        const { details } = this.state;
+        if(details) {
+            this.setState({ details });
 
-        if(!!details) {
-            await axios.post(backendUrl, { name: this.state.search })
+            const backendUrl = 'https://igcount-backend.herokuapp.com/api/inputs';
+            await axios.post(backendUrl, { name: search })
         }
     }
 
@@ -61,10 +56,10 @@ class IgSearch extends Component {
                                             <img alt="logo" className="rotate-logo" src={details ? details.profile_pic_url : 'https://scontent-lga3-1.cdninstagram.com/v/t51.2885-19/s320x320/13118136_356778611112585_836388753_a.jpg?_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_ohc=1ZTWTeLKPxwAX_joE6u&oh=47862d1b0a51b505228bb935368bb463&oe=5F28863C'} />
                                         </div>
 
-                                        <h3 className="display-6 m-b-15 m-t-10 text-center yt_name">{details ? details.username : 'Place holder'} {details?.is_verified ? <img src={verified} alt={"verified"} className={"verified-image"} /> : ''} {details?.is_private ? '🔒' : ''}</h3>
+                                        <h3 className="display-6 m-b-15 m-t-10 text-center yt_name">{details ? details.username : 'Place holder'} {details?.is_verified ? <img src={verified} alt={"verified"} className="verified-image" /> : ''} {details?.is_private ? '🔒' : ''}</h3>
                                     </div>
 
-                                    <p className="card-text text-center sub-count-counter">{ details?.edge_owner_to_timeline_media ? <CountUp start={0} suffix={' Posts'} end={details.edge_owner_to_timeline_media.count} /> : 'Place holder'}</p>
+                                    <p className="card-text text-center sub-count-counter">{ details?.edge_owner_to_timeline_media ? <CountUp start={0} suffix={' Posts'} separator={','} end={details.edge_owner_to_timeline_media.count} /> : 'Place holder'}</p>
                                     <span className="text-center">Total Posts:</span>
                                 </div>
 

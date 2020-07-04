@@ -1,5 +1,11 @@
 # Change log
 
+## - 7/4/2020
+
+```diff
++ Fixed bugs
+```
+
 ## - 7/3/2020
 
 **Added:**
