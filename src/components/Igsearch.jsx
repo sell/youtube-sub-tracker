@@ -27,8 +27,8 @@ class IgSearch extends Component {
     }
 
     async componentDidUpdate(_, prevState) {
-        const HEROKU_URL = process.env.REACT_APP_HEROKU;
-        const backendUrl = process.env.NODE_ENV === 'production' ? HEROKU_URL : '/api/inputs';
+        // const HEROKU_URL = 'https://igcount-backend.herokuapp.com/api/inputs';
+        const backendUrl = 'https://igcount-backend.herokuapp.com/api/inputs';
         const { details } = this.state;
 
         if(!!details) {
