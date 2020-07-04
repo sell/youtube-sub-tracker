@@ -7,6 +7,7 @@
 + Instagram Search
 + Added checkmark if users is verified
 + Added Lock if user account is private
++ Added backend server
 ```
 ## - 6/30/2020
 
